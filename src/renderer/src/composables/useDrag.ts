@@ -45,7 +45,6 @@ class Drag {
     // 5.计算移动后的位置与原本位置的距离
     const x = e.pageX - this.pageX
     const y = e.pageY - this.pageY
-    // console.log(x, y)
 
     // 6.调用预加载脚本拖拽事件
     window.api.drag({ x, y, width: this.innerWidth, height: this.innerHeight })

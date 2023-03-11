@@ -21,11 +21,25 @@ const quit = () => {
 const exit = () => {
   window.api.exit()
 }
+
+// 切换圆角
+const changeRound = () => {
+  config.rounded = !config.rounded
+
+  if (config.rounded) {
+    // 如果是圆角 设置窗口为1/1缩放
+    window.api.setWindowSize({ AspectRatio: 1, width: 320, height: 320 })
+  } else {
+    // 如果不是圆角 设置窗口为16/9缩放
+    window.api.setWindowSize({ AspectRatio: 16 / 9, width: 500, height: 280 })
+  }
+}
 </script>
 
 <template>
   <Suspense>
     <main class="relative group" @contextmenu="quit">
+      <!-- icon -->
       <section>
         <!-- 退出icon -->
         <Close
@@ -44,11 +58,7 @@ const exit = () => {
           <Config theme="outline" size="24" @click="config.page = 'setting'" />
 
           <!-- 圆角 -->
-          <InnerShadowDown
-            theme="outline"
-            size="24"
-            @click="config.rounded = !config.rounded"
-          />
+          <InnerShadowDown theme="outline" size="24" @click="changeRound" />
         </div>
 
         <!-- 配置页展示 -->

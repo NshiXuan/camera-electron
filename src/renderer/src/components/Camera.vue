@@ -42,7 +42,7 @@ onMounted(() => {
     }"
   >
     <video
-      class="object-cover h-full"
+      class="object-cover h-full w-full"
       :class="{ 'rounded-full': config.rounded }"
       :style="{
         border: config.rounded

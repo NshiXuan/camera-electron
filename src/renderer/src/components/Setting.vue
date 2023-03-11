@@ -15,7 +15,9 @@ const { config } = useConfigStore()
 </script>
 
 <template>
-  <main class="bg-[#2c3e50] w-screen h-screen p-5 flex flex-col gap-5 py-10">
+  <main
+    class="bg-[#2c3e50] w-screen h-screen p-5 flex flex-col gap-5 py-10 overflow-hidden"
+  >
     <h2 class="text-gray-50 text-center text-sm mb-3 opacity-70">参数设置</h2>
     <el-select v-model="config.deviceId" placeholder="请选择摄像头">
       <el-option

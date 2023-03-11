@@ -18,7 +18,15 @@ const api = {
   // 拖拽
   drag: (opt: { x: number; y: number; width: number; height: number }) => {
     ipcRenderer.invoke('drag', opt)
-    console.log(opt)
+  },
+
+  // 设置窗口尺寸事件
+  setWindowSize: (opt: {
+    AspectRatio: number
+    width?: number
+    height?: number
+  }) => {
+    ipcRenderer.send('setWindowSize', opt)
   }
 }
 

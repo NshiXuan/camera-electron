@@ -7,17 +7,20 @@ import drag from './drag'
 // 导入主进程监听的事件
 import './ipcMain'
 
+// 导入控制窗口尺寸方法
+import './windowSize'
+
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 320,
-    height: 320,
-    minWidth: 250,
-    minHeight: 250,
-    maxWidth: 500,
-    maxHeight: 500,
-    x: 1500,
-    y: 100,
+    width: 500,
+    height: 280,
+    // minWidth: 250,
+    // minHeight: 250,
+    // maxWidth: 500,
+    // maxHeight: 500,
+    // x: 1500,
+    // y: 100,
     show: false, // 显示层级大于调试
     frame: false, // 隐藏菜单栏 隐藏后无法拖动
     // alwaysOnTop: true, // 总是置顶
@@ -35,9 +38,6 @@ function createWindow(): void {
 
   // 如果是开发阶段 打开调试工具
   if (is.dev) mainWindow.webContents.openDevTools()
-
-  // 等比缩放
-  mainWindow.setAspectRatio(1)
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
