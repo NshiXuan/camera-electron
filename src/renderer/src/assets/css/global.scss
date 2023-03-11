@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; // 变成IE和盒模型
+}
+
+// DOM的拖放在window有冲突(会导致点击不了) 在苹果中可以使用
+// html {
+//   // 点击文档可以拖动
+//   -webkit-app-region: drag;
+// }
+
+// textarea {
+//   // 点击文本域不能拖动
+//   -webkit-app-region: no-drag;
+// }
